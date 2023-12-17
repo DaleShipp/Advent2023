@@ -4,7 +4,7 @@ import math
 
 MAX_LEN = 0
 
-contents = 0
+universe = 0
 
 # | is a vertical pipe connecting north and south.
 # - is a horizontal pipe connecting east and west.
@@ -25,7 +25,7 @@ direction_map = {
 }
 
 def points_to(param):
-    global contents
+    global universe
     x = param[0]
     y = param[1]
     sign = contents[y][x]
@@ -38,7 +38,7 @@ def points_to(param):
 
 
 def day10a():
-    global contents
+    global universe
     startpos = ()
     with open("day10.txt") as myfile:
         contents = myfile.read().split('\n')

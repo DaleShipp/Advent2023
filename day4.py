@@ -21,11 +21,11 @@ def day4a():
             total += score
     return total
 
-contents = ""
+universe = ""
 
 @lru_cache()
 def score_card(line_num, line):
-    global contents
+    global universe
     score = 1
     card, numbers = line.split(':')
     win_nums, entry_nums = numbers.split(' | ')
@@ -42,7 +42,7 @@ def score_card(line_num, line):
     return score
 
 def day4b():
-    global contents
+    global universe
     with open("day4.txt", encoding="utf-8") as file:
         contents = file.readlines()
         total = 0
