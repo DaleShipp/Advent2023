@@ -23,11 +23,11 @@ def day5a():
             # We are in the changes section
             changes.append(row)
 
+    # Iterate over all changes
     failed_rows = 0
-    # print(rules)
+    total = 0
     for row in changes:
         pages = row.split(',')
-        # print(pages)
         failed_pages = 0
         pages_seen = set()
         for page in pages:
@@ -38,7 +38,10 @@ def day5a():
 
         if failed_pages:
             failed_rows += 1
-    return failed_rows
+        else:
+            l = len(pages)
+            total += int(pages[l//2])
+    return total
 
 
 if __name__ == '__main__':
